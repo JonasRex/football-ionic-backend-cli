@@ -13,3 +13,5 @@ export class Category {
   @OneToMany(() => QuestionToCategory, (questionToCategory) => questionToCategory.category)
   questionToCategories: QuestionToCategory[];
 }
+
+// Doc: https://typeorm.io/many-to-many-relations#many-to-many-relations-with-custom-properties

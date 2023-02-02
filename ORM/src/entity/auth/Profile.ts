@@ -20,7 +20,7 @@ export class Profile {
   @Column()
   last_name: string;
 
-  @Column()
+  @Column({ type: 'int' })
   age: number;
 
   @Column({ default: false })

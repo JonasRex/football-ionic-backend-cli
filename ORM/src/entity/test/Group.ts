@@ -11,9 +11,17 @@ export class Group {
   something: string;
 
   @ManyToOne(() => Person, (person) => person.group, { cascade: ['insert', 'update'] })
+  @JoinColumn({
+    name: 'leader_fk',
+    referencedColumnName: 'id',
+  })
   public leader: Person;
 
   @ManyToOne(() => Person, (person) => person.group, { cascade: ['insert', 'update'] })
+  @JoinColumn({
+    name: 'worker_fk',
+    referencedColumnName: 'id',
+  })
   public worker: Person;
 
   @ManyToOne(() => GroupType, { nullable: true })
